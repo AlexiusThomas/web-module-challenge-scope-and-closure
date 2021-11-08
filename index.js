@@ -28,11 +28,20 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+
+  counter1 in it's function scope, contains one variable and one function and has access to the variable "count" inside of its scope.
+  counter 1 contains a private variable and a function in it's function scope. counter 2 has access to the variable outside of its scope.
+
   2. Which of the two uses a closure? How can you tell?
   
+  counter1 has a closure and you know this, when a function is created inside of a function, the inner function is a closure.
+  
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better? 
+
+     counter1 would be preferred for private variables to store a value that would not be initialized everytime the function is called.
+     counter1 would also be preferred in this case the count as the private variables can store a value and can not be accessed out of its scope.
+     counter2 is preferred when the variables are need to be re-initialized everytime the function called and when the variables it manipulates are also needed to be accessed by other functions. 
 */
 
 // counter1 code
@@ -62,8 +71,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+  return Math.round(Math.random()*2);
 }
 
 
