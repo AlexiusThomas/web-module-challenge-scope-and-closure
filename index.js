@@ -75,6 +75,10 @@ function inning(){
   return Math.round(Math.random()*2);
 }
 
+//function inning(){
+  //return Math.floor(Math.random() * 3);
+//}
+i//nning();
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -111,45 +115,13 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-}
-
-function scoreboard(scoreFunct,innings) {
-  let home = [0]
-  let away = [0]
-  for(let i = 1; i<innings; i++){ 
-  home.push(home[i-1]+=scoreFunct());
-  away.push(away[i-1]+=scoreFunct());
-  for(let i = 0; i<innings; i++){ 
-  home.push(home[i]+scoreFunct());
-  away.push(away[i]+scoreFunct());
-}
-console.log(
-`1st inning: ${home[0]} - ${away[0]}
-2nd inning: ${home[1]} - ${away[1]}
-3rd inning: ${home[2]} - ${away[2]}
-4th inning: ${home[3]} - ${away[3]}
-5th inning: ${home[4]} - ${away[4]}
-6th inning: ${home[5]} - ${away[5]}
-7th inning: ${home[6]} - ${away[6]}
-8th inning: ${home[7]} - ${away[7]}
-9th inning: ${home[8]} - ${away[8]}
-Final Score: ${home[8]} - ${away[8]}`)
-console.log(away)  
-`1st inning: ${home[1]} - ${away[1]}
-2nd inning: ${home[2]} - ${away[2]}
-3rd inning: ${home[3]} - ${away[3]}
-4th inning: ${home[4]} - ${away[4]}
-5th inning: ${home[5]} - ${away[5]}
-6th inning: ${home[6]} - ${away[6]}
-7th inning: ${home[7]} - ${away[7]}
-8th inning: ${home[8]} - ${away[8]}
-9th inning: ${home[9]} - ${away[9]}
-Final Score: ${home[9]} - ${away[9]}`)
-}
-
-scoreboard(inning,9)
+  function getInningScore(inning) {
+    let home = inning();
+    let away = inning();
+    return {"Home": home, "Away": away};
+  }
+  getInningScore(inning);
+  console.log(getInningScore(inning));
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
