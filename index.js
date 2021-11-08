@@ -70,15 +70,11 @@ Use the inning function below to do the following:
   
 NOTE: This will be a callback function for the tasks below
 */
-
 function inning(){
-  return Math.round(Math.random()*2);
+  let points = Math.floor(Math.random() * 3);
+return points;
 }
 
-//function inning(){
-  //return Math.floor(Math.random() * 3);
-//}
-//inning();
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
