@@ -29,8 +29,8 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
 
-  counter1 in it's function scope, contains one variable and one function and has access to the variable "count" inside of its scope.
-  counter 1 contains a private variable and a function in it's function scope. counter 2 has access to the variable outside of its scope.
+  counter1 in it's function scope, contains one variable and one function and has access to the variable "count" inside of its scope. counter1 is using closure and will only update it's count through invoking it
+  counter 1 contains a private variable and a function in it's function scope. counter 2 has access to the variable outside of its scope. counter2 is accessing the global variable count
 
   2. Which of the two uses a closure? How can you tell?
   
@@ -90,9 +90,21 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inning, num){
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < num; i++) {
+    homeScore += inning();
+    awayScore += inning();
+  }
+  
+  return {
+    'Home': homeScore,
+    'Away': awayScore,
+  }
 }
+console.log(finalScore(inning,9));
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
@@ -145,10 +157,22 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
 
+
+
+function scoreboard(inning, num) {
+  let home = 0;
+  let away = 0;
+  for (let i=0; i<num; i++) {
+    home += inning();
+    away += inning();
+    if(i===0){console.log(`1st inning: ${home} - ${away}`)}
+    else if(i===1){console.log(`2nd inning: ${home} - ${away}`)}
+    else if(i===2){console.log(`3rd inning: ${home} - ${away}`)}
+    else {console.log(`${i}th inning: ${home} - ${away}`)}
+  }
+}
+scoreboard(inning, 9);
 
 
 

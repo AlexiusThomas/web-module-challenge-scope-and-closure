@@ -82,8 +82,17 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+
+The use of the function within the function means that a closure exists for the contained function.  
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The variable "Dan" will always be the same, but the number may change because a random number is used and the function will be called again.
+
 c. What is the lexical scope of `newRoll`? 
+
+newRoll has access to its parent container which is personalDice as well as the global scope. 
 
 
 ### Task 3 - Stretch Goals
