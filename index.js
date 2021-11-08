@@ -78,7 +78,7 @@ function inning(){
 //function inning(){
   //return Math.floor(Math.random() * 3);
 //}
-i//nning();
+//inning();
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
